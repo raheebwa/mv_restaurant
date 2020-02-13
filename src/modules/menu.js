@@ -3,7 +3,7 @@ const cardContainer = document.createElement('div');
 cardContainer.setAttribute('class', 'card-columns');
 
 // 2. Render Card
-function Card(imageSrc, cardHeading, cardContent) {
+function myCard(imageSrc, cardHeading, cardContent) {
     // 2.1 Render Card div 
     const card = document.createElement('div');
     card.setAttribute('class', 'card');
@@ -33,7 +33,24 @@ function Card(imageSrc, cardHeading, cardContent) {
     return card;
 }
 //  5. Data for Cards
+let menuItems = [
+    {
+        iitemImg: './assets/menu-1.png',
+        itemName: '',
+        itemDesc: ''
+    },
+];
 
 //  6. Function build Menu page
-
+function renderMenuPage() {
+    menuItems.forEach(item => {
+        cardContainer.appendChild(myCard(
+            item.iitemImg,
+            item.itemName,
+            item.itemDesc
+        ));
+    });
+    return cardContainer;
+}
 //  7. Export Menu Page
+export default renderMenuPage;
