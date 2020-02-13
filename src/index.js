@@ -1,11 +1,12 @@
+// import your function
+import renderBanner from './modules/banner';
 
-// const wrapper = document.getElementById("content");
+function component() {
+    var element = document.createElement('div');
 
+    // use your function!
+    element.innerHTML = myName('Cody');
+    return element;
+}
 
-// const helloButton = document.createElement("button");
-// helloButton.classList.add = ('btn', 'btn-primary');
-// helloButton.setAttribute('content', 'Hello Dear');
-// helloButton.innerHTML = 'Hello Dear';
-// helloButton.onclick = alert("Hiiiiii!");
-
-// wrapper.appendChild(helloButton);
+document.getElementById('content').appendChild(renderBanner());

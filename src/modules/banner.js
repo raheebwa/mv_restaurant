@@ -1,0 +1,52 @@
+const logo = (source) => {
+    let classes = ("img-fluid rounded-circle");
+    const imgLogo = document.createElement('img');
+    imgLogo.alt = 'logo';
+    imgLogo.width = 200;
+    imgLogo.src = source;
+    imgLogo.setAttribute('class', classes);
+
+    return imgLogo;
+}
+
+const heading = (xcontent, type = 'h1') => {
+    const myH1 = document.createElement(type);
+    myH1.innerHTML = xcontent;
+    myH1.setAttribute('class','display-3');
+
+    return myH1;
+}
+
+const paragraph = (content = '', pClass = '') => {
+    const p = document.createElement('p');
+    p.setAttribute('class', pClass);
+    p.innerHTML = content;
+
+    return p;
+}
+const tagline = (cont) => {
+    return paragraph(cont, 'lead');
+}
+
+const btn = (cont, url, classes = ('btn btn-outline-light')) => {
+    const button = document.createElement('a');
+    button.setAttribute('class',classes);
+    button.innerHTML = cont;
+    button.setAttribute('href', url);
+
+    return button;
+}
+
+function renderBanner() {
+    let msg = "Welcome to Ramar\'s Restuarant";
+    const jumbo = document.createElement('div');
+    jumbo.setAttribute('class', 'jumbotron bg-dark text-white text-center');
+    jumbo.appendChild(logo('./assets/logo.png'));
+    jumbo.appendChild(heading(msg));
+    jumbo.appendChild(tagline('Your one stop shop for the best meals'));
+    jumbo.appendChild(btn('Order Now', '#'));
+
+    return jumbo;
+}
+
+export default renderBanner;
