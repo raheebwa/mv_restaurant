@@ -1,12 +1,8 @@
-// import your function
+
 import renderBanner from './modules/banner';
+import renderNav from './modules/navigation';
 
-function component() {
-    var element = document.createElement('div');
-
-    // use your function!
-    element.innerHTML = myName('Cody');
-    return element;
-}
-
-document.getElementById('content').appendChild(renderBanner());
+const header = document.getElementById('content');
+header.setAttribute('class', 'container');
+header.appendChild(renderBanner());
+header.appendChild(renderNav());
