@@ -1,10 +1,12 @@
 // 1. Render Card columns container
 const cardContainer = document.createElement('div');
-cardContainer.setAttribute('card-columns');
+cardContainer.setAttribute('class', 'card-columns');
 // 2. Render Card 
 const card = document.createElement('div');
-card.setAttribute('card');
+card.setAttribute('class', 'card');
 //  3. Render Card Body
+const cardBody = document.createElement('div');
+cardBody.setAttribute('class', 'card-body text-center');
 
 //  4. Render Card Content
 
