@@ -2,7 +2,8 @@
 const cardContainer = document.createElement('div');
 cardContainer.setAttribute('card-columns');
 // 2. Render Card 
-
+const card = document.createElement('div');
+card.setAttribute('card');
 //  3. Render Card Body
 
 //  4. Render Card Content
