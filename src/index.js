@@ -2,7 +2,9 @@
 import renderBanner from './modules/banner';
 import renderNav from './modules/navigation';
 
-const header = document.getElementById('content');
-header.setAttribute('class', 'container');
-header.appendChild(renderBanner());
-header.appendChild(renderNav());
+const myHeader = document.getElementById('content');
+myHeader.setAttribute('class', 'container');
+myHeader.appendChild(renderBanner());
+myHeader.appendChild(renderNav());
+
+// console.log(renderNav());

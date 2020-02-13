@@ -1,44 +1,38 @@
 
-let links = [
-    {
-        title: "Home",
-        id: "home"
-    }, 
-    {
-        title: "Menu",
-        id: "menu"
-    },
-    {
-        title: "Contact us",
-        id: "contact"
-    }
-];
+const myNav = document.createElement('ul');
+myNav.setAttribute('class', 'nav nav-tabs');
 
-const navList = () => {
-    const myNav = document.createElement('ul');
-    myNav.setAttribute('class', 'nav nav-tabs');
-    return myNav;
-}
 
-const navLink = (title, id) => {
+function navLink(title, id){
     var myLi = document.createElement('li');
-    myLi.setAttribute('class', 'nav-link');
+    myLi.setAttribute('class', 'nav-item');
     
     const myA = document.createElement('a');
     myA.setAttribute('href', '#' + id);
-    myA.setAttribute('class', 'nav-item');
+    myA.setAttribute('class', 'nav-link');
     myA.innerText = title;
 
-    myLi.innerHTML = myA;
+    myLi.appendChild(myA);
     return myLi;
 }
 
 
+function createList(parent, children) {
+    children.forEach(child => {
+        parent.appendChild(child);
+    });    
+}
+
+
+var links = [
+    navLink('Home', 'home'),
+    navLink('Menu', 'menu'),
+    navLink('Contact', 'contact'),
+];
+
 function renderNav() {
-    links.forEach(link => {
-        navList.appendChild(navLink(link.title, link.id));
-    });
-    return navList;    
+    createList(myNav, links);
+    return myNav;
 }
 
 export default renderNav;
