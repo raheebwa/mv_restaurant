@@ -5,10 +5,10 @@ container.setAttribute('id', 'home');
 
 //  2. Render Content
 const paragraph = (content) => {
-    document.createElement('p');
-    paragraph.setAttribute('class', 'lead');
-    paragraph.innerText = content;
-    return paragraph;
+    const p = document.createElement('p');
+    p.setAttribute('class', 'lead');
+    p.innerText = content;
+    return p;
 }
 
 //  3. Data to render
