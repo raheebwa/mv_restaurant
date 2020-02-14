@@ -1,6 +1,7 @@
 
 const myNav = document.createElement('ul');
 myNav.setAttribute('class', 'nav nav-tabs');
+myNav.setAttribute('id', 'main-nav');
 
 
 function navLink(title, id){
@@ -8,7 +9,8 @@ function navLink(title, id){
     myLi.setAttribute('class', 'nav-item');
     
     const myA = document.createElement('a');
-    myA.setAttribute('href', '#' + id);
+    myA.setAttribute('id', id);
+    myA.setAttribute('href', '#');
     myA.setAttribute('class', 'nav-link');
     myA.innerText = title;
 
