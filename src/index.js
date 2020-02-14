@@ -12,33 +12,32 @@ myHeader.appendChild(renderBanner());
 myHeader.appendChild(renderNav());
 
 const clearContent = elementID => {
-    let div = document.getElementById(elementID);
-    while (div.firstChild) {
-        div.removeChild(div.firstChild);
-    }
-}
+  const div = document.getElementById(elementID);
+  while (div.firstChild) {
+    div.removeChild(div.firstChild);
+  }
+};
 
 // Render conatiner for main body
 const myMain = document.createElement('main');
-myMain.setAttribute('id', 'main-content')
-myMain.setAttribute('class', 'my-3')
+myMain.setAttribute('id', 'main-content');
+myMain.setAttribute('class', 'my-3');
 myHeader.append(myMain);
 
-//  Event Listener 
+//  Event Listener
 
 // INitlaise with home page
 document.getElementById('main-content').appendChild(renderHomePage());
 
 // Define event listeneing function
 const myEventListener = (id, action) => {
-    let button = document.getElementById(id);
-    button.addEventListener('click', () => {
-        clearContent('main-content');
-        document.getElementById('main-content').appendChild(action);
-    });
-}
+  const button = document.getElementById(id);
+  button.addEventListener('click', () => {
+    clearContent('main-content');
+    document.getElementById('main-content').appendChild(action);
+  });
+};
 // Add event listener to all tabs
 myEventListener('home', renderHomePage());
 myEventListener('menu', renderMenuPage());
 myEventListener('contact', renderContactPage());
-
