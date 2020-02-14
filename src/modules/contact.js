@@ -1,7 +1,6 @@
 // 1. Render container
 const container = document.createElement('div');
 container.setAttribute('class', 'text-center');
-container.setAttribute('id', 'home');
 
 //  2. Render Paragraph
 const paragraph = (content) => {
