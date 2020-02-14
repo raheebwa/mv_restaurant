@@ -3,11 +3,11 @@ const container = document.createElement('div');
 container.setAttribute('class', 'text-center');
 
 //  2. Render Content
-const paragraph = (content) => {
-    const p = document.createElement('p');
-    p.setAttribute('class', 'lead');
-    p.innerText = content;
-    return p;
+const paragraph = content => {
+    const prgh = document.createElement('p');
+    prgh.setAttribute('class', 'lead');
+    prgh.innerText = content;
+    return prgh;
 }
 
 //  3. Data to render
@@ -16,14 +16,11 @@ let data = [
     'Our Menu,  Nihil ducimus sapiente ut corporis voluptatibus optio inventore adipisci.Quibusdam perspiciatis neque accusamus nam ? Ratione, quaerat placeat.',
     'Nihil ducimus sapiente ut corporis voluptatibus optio inventore adipisci.Quibusdam perspiciatis neque accusamus nam ? Ratione, quaerat placeat.'
 ];
-
 //  4. Function to render page 
-
-function renderHomePage() {
+const renderHomePage = () => {
     data.forEach(item => {
         container.appendChild(paragraph(item));
     });
     return container;
 }
-
 export default renderHomePage;

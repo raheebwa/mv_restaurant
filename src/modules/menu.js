@@ -3,7 +3,7 @@ const cardContainer = document.createElement('div');
 cardContainer.setAttribute('class', 'card-columns');
 
 // 2. Render Card
-function myCard(imageSrc, cardHeading, cardContent) {
+const myCard = (imageSrc, cardHeading, cardContent) => {
     // 2.1 Render Card div 
     const card = document.createElement('div');
     card.setAttribute('class', 'card');
@@ -35,28 +35,27 @@ function myCard(imageSrc, cardHeading, cardContent) {
 //  5. Data for Cards
 let menuItems = [
     {
-            iitemImg: './assets/menu-1.png',
-            itemName: 'Cute Burger Fish',
-            itemDesc: 'UGX 25000/-'
+            'itemAimage': './assets/menu-1.png',
+            'itemBName': 'Cute Burger Fish',
+            'itemDesc': 'UGX 25000/-'
         }, 
         {
-            iitemImg: './assets/menu-2.png',
-            itemName: 'Cute Burger Chicken',
-            itemDesc: 'UGX 35000/-'
+            'itemAimage': './assets/menu-2.png',
+            'itemBName': 'Cute Burger Chicken',
+            'itemDesc': 'UGX 35000/-'
         }, 
         {
-            iitemImg: './assets/menu-3.png',
-            itemName: 'Cute Burger Beef',
-            itemDesc: 'UGX 20000/-'
-        },
+            'itemAimage': './assets/menu-3.png',
+            'itemBName': 'Cute Burger Beef',
+            'itemDesc': 'UGX 20000/-'
+        }
 ];
-
 //  6. Function build Menu page
-function renderMenuPage() {
+const renderMenuPage = () => {
     menuItems.forEach(item => {
         cardContainer.appendChild(myCard(
-            item.iitemImg,
-            item.itemName,
+            item.itemAimage,
+            item.itemBName,
             item.itemDesc
         ));
     });

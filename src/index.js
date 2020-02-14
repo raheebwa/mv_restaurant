@@ -1,9 +1,9 @@
 
 import renderBanner from './modules/banner';
-import renderNav from './modules/navigation';
+import renderContactPage from './modules/contact';
 import renderHomePage from './modules/home';
 import renderMenuPage from './modules/menu';
-import renderContactPage from './modules/contact';
+import renderNav from './modules/navigation';
 
 // Render Banner & Tabbed Navigation
 const myHeader = document.getElementById('content');
@@ -11,9 +11,8 @@ myHeader.setAttribute('class', 'container mb-3');
 myHeader.appendChild(renderBanner());
 myHeader.appendChild(renderNav());
 
-function clearContent(elementID) {
-    var div = document.getElementById(elementID);
-
+const clearContent = elementID => {
+    let div = document.getElementById(elementID);
     while (div.firstChild) {
         div.removeChild(div.firstChild);
     }
@@ -28,17 +27,16 @@ myHeader.append(myMain);
 //  Event Listener 
 
 // INitlaise with home page
-document.getElementById("main-content").appendChild(renderHomePage());
+document.getElementById('main-content').appendChild(renderHomePage());
 
-// define event listeneing function
-function myEventListener(id, action) {
-    var button = document.getElementById(id);
-    button.addEventListener("click", function () {
+// Define event listeneing function
+const myEventListener = (id, action) => {
+    let button = document.getElementById(id);
+    button.addEventListener('click', () => {
         clearContent('main-content');
-        document.getElementById("main-content").appendChild(action);
+        document.getElementById('main-content').appendChild(action);
     });
 }
-
 // Add event listener to all tabs
 myEventListener('home', renderHomePage());
 myEventListener('menu', renderMenuPage());

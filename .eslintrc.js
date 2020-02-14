@@ -9,7 +9,8 @@ module.exports = {
         'SharedArrayBuffer': 'readonly'
     },
     'parserOptions': {
-        'ecmaVersion': 2018
+        'ecmaVersion': 2018,
+        "sourceType": "module",
     },
     'rules': {
         'accessor-pairs': 'error',
@@ -85,7 +86,7 @@ module.exports = {
         'max-lines-per-function': 'error',
         'max-nested-callbacks': 'error',
         'max-params': 'error',
-        'max-statements': 'error',
+        // 'max-statements': 'error',
         'max-statements-per-line': 'error',
         'multiline-comment-style': 'error',
         'new-parens': 'error',
@@ -227,7 +228,7 @@ module.exports = {
         'radix': 'error',
         'require-atomic-updates': 'error',
         'require-await': 'error',
-        'require-jsdoc': 'error',
+        // 'require-jsdoc': 'error',
         'require-unicode-regexp': 'error',
         'rest-spread-spacing': 'error',
         'semi': 'off',

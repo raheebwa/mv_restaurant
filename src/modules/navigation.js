@@ -4,8 +4,8 @@ myNav.setAttribute('class', 'nav nav-tabs');
 myNav.setAttribute('id', 'main-nav');
 
 
-function navLink(title, id){
-    var myLi = document.createElement('li');
+const navLink = (title, id) => {
+    let myLi = document.createElement('li');
     myLi.setAttribute('class', 'nav-item');
     
     const myA = document.createElement('a');
@@ -19,22 +19,20 @@ function navLink(title, id){
 }
 
 
-function createList(parent, children) {
+const createList = (parent, children) => {
     children.forEach(child => {
         parent.appendChild(child);
     });    
 }
 
 
-var links = [
+let links = [
     navLink('Home', 'home'),
     navLink('Menu', 'menu'),
-    navLink('Contact', 'contact'),
+    navLink('Contact', 'contact')
 ];
-
-function renderNav() {
+const renderNav = () => {
     createList(myNav, links);
     return myNav;
 }
-
 export default renderNav;

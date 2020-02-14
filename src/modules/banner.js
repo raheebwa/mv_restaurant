@@ -1,5 +1,5 @@
-const logo = (source) => {
-    let classes = ("img-fluid rounded-circle");
+const logo = source => {
+    let classes = 'img-fluid rounded-circle';
     const imgLogo = document.createElement('img');
     imgLogo.alt = 'logo';
     imgLogo.width = 200;
@@ -18,17 +18,17 @@ const heading = (xcontent, type = 'h1') => {
 }
 
 const paragraph = (content = '', pClass = '') => {
-    const p = document.createElement('p');
-    p.setAttribute('class', pClass);
-    p.innerHTML = content;
+    const prgh = document.createElement('p');
+    prgh.setAttribute('class', pClass);
+    prgh.innerHTML = content;
 
-    return p;
+    return prgh;
 }
-const tagline = (cont) => {
+const tagline = cont => {
     return paragraph(cont, 'lead');
 }
 
-const btn = (cont, url, classes = ('btn btn-outline-light')) => {
+const btn = (cont, url, classes = 'btn btn-outline-light') => {
     const button = document.createElement('a');
     button.setAttribute('class',classes);
     button.innerHTML = cont;
@@ -36,9 +36,8 @@ const btn = (cont, url, classes = ('btn btn-outline-light')) => {
 
     return button;
 }
-
-function renderBanner() {
-    let msg = "Welcome to Ramar\'s Restuarant";
+const renderBanner = () => {
+    let msg = 'Welcome to Ramar\'s Restuarant';
     const jumbo = document.createElement('div');
     jumbo.setAttribute('class', 'jumbotron bg-dark text-white text-center');
     jumbo.appendChild(logo('./assets/logo.png'));
@@ -48,5 +47,4 @@ function renderBanner() {
 
     return jumbo;
 }
-
 export default renderBanner;
